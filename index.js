@@ -16,3 +16,10 @@ app.use(morgan("dev")); //nos muestra info extra en la trminal
 app.use(express.json());//parsea los datos que vienen en formato json
 app.use(express.urlencoded({extended : true}));//para poder hacer peticiones de tipo POST y tener acceso a los datos deñ request
 
+//3 configurar rutas
+app.get("/nuevo/producto",(req,res)=>{
+console.log("aqui obtener la lista de los productos");
+res.send("Aqui enviaremos la lista de productos")
+
+})
+ 
