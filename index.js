@@ -3,6 +3,7 @@ import "dotenv/config";
 import cors from "cors";
 import morgan from "morgan";
 console.log("hola mundo")
+import productosRouter from "./src/routes/productos.routes.js";
 
 //1- configurar puerto
 const app =express();
@@ -22,4 +23,5 @@ console.log("aqui obtener la lista de los productos");
 res.send("Aqui enviaremos la lista de productos")
 
 })
+app.use("/api", productosRouter )
  
