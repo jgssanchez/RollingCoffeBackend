@@ -4,7 +4,8 @@ import cors from "cors";
 import morgan from "morgan";
 console.log("hola mundo")
 import productosRouter from "./src/routes/productos.routes.js";
-
+import path from "path";
+import { fileURLToPath } from "url";
 //1- configurar puerto
 const app =express();
 app.set("port", process.env.PORT || 4000);
@@ -16,6 +17,9 @@ app.use(cors()); //permite conexiones remotas
 app.use(morgan("dev")); //nos muestra info extra en la trminal
 app.use(express.json());//parsea los datos que vienen en formato json
 app.use(express.urlencoded({extended : true}));//para poder hacer peticiones de tipo POST y tener acceso a los datos deñ request
+const  __filename = fileURLToPath(import.meta.url);
+const __dirname =  path.dirname(__filename);
+app.use(express.static(path.join(__dirname,"/public")));
 
 //3 configurar rutas
 app.get("/nuevo/producto",(req,res)=>{
