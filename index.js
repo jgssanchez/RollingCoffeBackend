@@ -6,6 +6,7 @@ console.log("hola mundo")
 import productosRouter from "./src/routes/productos.routes.js";
 import path from "path";
 import { fileURLToPath } from "url";
+import "./src/database/database.js";
 //1- configurar puerto
 const app =express();
 app.set("port", process.env.PORT || 4000);
