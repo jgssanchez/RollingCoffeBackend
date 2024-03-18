@@ -1,14 +1,24 @@
 import Producto from "../database/models/producto";
-export const ListarProductos = (req,res)=>{
-console.log("aqui obtener la lista de los productos");
-res.send("Aqui enviaremos la lista de productos")
+export const ListarProductos = async(req,res)=>{
+    try {
+        //pedir a la bd la lista de productos
+        // responer al front con el array de los productos
+    } catch (error) {
+        console.error(error);
+        res.status(400).json({
+            mensaje: "error al obtener la lista de productos"
+        })
+    }
+
 
 };
 export const crearProducto= async(req,res)=>{
     try{
-        console.log(req);
-        console.log(res.body)
-
+        const productoNuevo = new Producto(req.body);
+        await productoNuevo.save();
+        res.status(201).json({
+            mensaje: "producto creado"
+        })
     }catch(error){
         console.error(error);
         res.status(500).json({

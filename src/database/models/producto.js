@@ -43,3 +43,5 @@ const productoSchema = new Schema({
     enum: ['Infusiones', 'Batidos','Dulce', 'Salado']
   }
 });
+  const Producto = mongoose.model("producto", productoSchema)
+  export default Producto;
