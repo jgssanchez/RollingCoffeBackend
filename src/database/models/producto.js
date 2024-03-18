@@ -37,4 +37,9 @@ const productoSchema = new Schema({
     minLength: 30,
     maxlength: 300,
   },
+  categoria:{
+    type: String,
+    required: true,
+    enum: ['Infusiones', 'Batidos','Dulce', 'Salado']
+  }
 });
