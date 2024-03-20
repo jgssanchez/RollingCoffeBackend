@@ -70,7 +70,7 @@ export const editarProductos = async(req,res)=>{
 
 
 };
-export const borrarProductos = async(req,res)=>{
+;export const borrarProductos = async(req,res)=>{
     try {
        const productoBuscado = await Producto.findById(req.params.id)
        if (!productoBuscado){
@@ -86,4 +86,4 @@ export const borrarProductos = async(req,res)=>{
     res.status(500).json({
         mensaje: "error al borrar el producto"
     })};
-};
+}
