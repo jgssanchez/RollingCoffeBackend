@@ -2,7 +2,6 @@ import  express  from "express";
 import "dotenv/config";
 import cors from "cors";
 import morgan from "morgan";
-console.log("hola mundo")
 import productosRouter from "./src/routes/productos.routes.js";
 import path from "path";
 import { fileURLToPath } from "url";
